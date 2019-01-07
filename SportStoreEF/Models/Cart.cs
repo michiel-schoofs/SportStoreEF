@@ -14,9 +14,17 @@ namespace SportsStore.Models
         #endregion
 
         #region Methods
-        public void AddLine(Product product, int quantity)
-        {
-            throw new NotImplementedException();
+        public void AddLine(Product product, int quantity) {
+            if (CartLines.Where(cl => cl.Product == product).Count() != 0) {
+                CartLine cl = CartLines.Where(x => x.Product.Equals(product)).FirstOrDefault();
+                cl.Quantity += quantity;
+            }
+            else {
+                _lines.Add(new CartLine() {
+                    Product = product,
+                    Quantity = quantity
+                });
+            }
         }
 
         public void RemoveLine(Product product)

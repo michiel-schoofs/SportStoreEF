@@ -7,7 +7,7 @@ namespace SportStoreEF.Data {
     public static class SportsStoreDataInitializer {
         public static void InitializeData(ApplicationDbContext dbContext) {
             Product football = new Product("Football", 25, "WK colors");
-            Product cornerflags = new Product("Corner flags", 34.95M, "Give your playing field that professional touch");
+            Product cornerflags = new OnlineProduct("Corner flags", 34.95M,"cornerflags_thumb.png", "Give your playing field that professional touch");
             Product shoes = new Product("Running shoes", 95, "Protective and fashionable");
             Product surfboard = new Product("Surf board", 275, "A boat for one person");
             Product kayak = new Product("Kayak", 170, "High quality");

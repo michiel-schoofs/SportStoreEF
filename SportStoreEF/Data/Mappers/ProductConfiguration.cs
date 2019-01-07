@@ -7,6 +7,11 @@ namespace SportStoreEF.Data.Mappers {
         public void Configure(EntityTypeBuilder<Product> builder) {
             builder.ToTable("Product");
 
+            builder
+                .HasDiscriminator<string>("Discriminator")
+                .HasValue<Product>("Product")
+                .HasValue<OnlineProduct>("OnlineProduct");
+
             builder.Property(p => p.Name).IsRequired().HasMaxLength(100);
         }
     }

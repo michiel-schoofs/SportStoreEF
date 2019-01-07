@@ -22,8 +22,8 @@ namespace SportStoreEF {
                 .ApplyConfiguration<Order>(new OrderConfiguration())
                 .ApplyConfiguration<OrderLine>(new OrderLineConfiguration())
                 .ApplyConfiguration<Category>(new CategoryConfiguration())
-                .ApplyConfiguration<ProductCategory>(new CategoryProductConfiguration());
-
+                .ApplyConfiguration<ProductCategory>(new CategoryProductConfiguration())
+                .ApplyConfiguration<OnlineProduct>(new OnlineProductConfiguration());
         }
     }
 }

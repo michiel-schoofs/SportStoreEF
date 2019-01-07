@@ -31,7 +31,11 @@ namespace SportsStore.Models
 
         public void AddProduct(string name, decimal price, string description, string thumbnail = null)
         {
-            AddProduct(new Product(name, price, description));
+            AddProduct((
+                thumbnail==null?
+                new Product(name, price, description):
+                new OnlineProduct(name,price,thumbnail,description))
+            );
         }
 
         public void AddProduct(Product product)

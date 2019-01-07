@@ -7,6 +7,7 @@ namespace SportStoreEF {
         public DbSet<Product> products { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             var connectionString = @"Server=.\SQLEXPRESS;Database=SportStoreex7;Integrated Security=True";
@@ -19,7 +20,10 @@ namespace SportStoreEF {
                 .ApplyConfiguration<City>(new CityConfiguration())
                 .ApplyConfiguration<Customer>(new CustomerConfiguration())
                 .ApplyConfiguration<Order>(new OrderConfiguration())
-                .ApplyConfiguration<OrderLine>(new OrderLineConfiguration());
+                .ApplyConfiguration<OrderLine>(new OrderLineConfiguration())
+                .ApplyConfiguration<Category>(new CategoryConfiguration())
+                .ApplyConfiguration<ProductCategory>(new CategoryProductConfiguration());
+
         }
     }
 }

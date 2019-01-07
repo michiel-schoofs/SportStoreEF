@@ -3,9 +3,10 @@ using SportsStore.Models;
 using SportStoreEF.Data.Mappers;
 
 namespace SportStoreEF {
-    class ApplicationDbContext :DbContext{
-        DbSet<Product> products { get; set; }
-        DbSet<Customer> Customers { get; set; }
+    public class ApplicationDbContext :DbContext{
+        public DbSet<Product> products { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<City> Cities { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             var connectionString = @"Server=.\SQLEXPRESS;Database=SportStoreex7;Integrated Security=True";

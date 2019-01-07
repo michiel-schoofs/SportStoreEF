@@ -13,6 +13,11 @@ namespace SportStoreEF.Data.Mappers {
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Restrict);
 
+            builder.HasMany(c => c.Orders)
+                .WithOne()
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
+
             builder.Property(c => c.CustomerName).HasMaxLength(20).IsRequired();
             builder.Property(c => c.FirstName).HasMaxLength(100).IsRequired();
             builder.Property(c => c.Name).HasMaxLength(100).IsRequired();

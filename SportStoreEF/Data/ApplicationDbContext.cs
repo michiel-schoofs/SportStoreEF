@@ -16,7 +16,9 @@ namespace SportStoreEF {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration<Product>(new ProductConfiguration())
                 .ApplyConfiguration<City>(new CityConfiguration())
-                .ApplyConfiguration<Customer>(new CustomerConfiguration());
+                .ApplyConfiguration<Customer>(new CustomerConfiguration())
+                .ApplyConfiguration<Order>(new OrderConfiguration())
+                .ApplyConfiguration<OrderLine>(new OrderLineConfiguration());
         }
     }
 }
